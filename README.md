@@ -1,2 +1,2 @@
-# Rock-Paper-Scissor-Game-
-This game is develop by Rajendra Chimala. In this game I used HTML CSS and JavaScript. It is easy to play game.
+# rock-paper-scissors
+![image](https://github.com/rajendraxettri/rock-paper-scissors/assets/143806308/ab3c5182-c03b-43c2-8f37-85c522ef7fc1)

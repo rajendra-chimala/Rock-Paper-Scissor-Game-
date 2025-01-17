@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .card{
+            box-shadow: -5px -5px 9px #ffffff73, 5px 5px 7px #5e687949;
+            width: 500px;
+            margin: auto;
+            justify-content: center;
+            text-align: center;
+            padding: 30px 0px; 
+        
+
+
+
+        }
+
+        .left{
+            box-shadow: -5px -5px 9px #ffffff73, 5px 5px 7px #5e687949;
+            height: 150px;
+            width: 190px;
+            border-radius: 5px;
+            padding: 5px 0px 15px 0px;
+        }
+
+        .hlogo{
+            filter: drop-shadow(5px 5px 5px #222); 
+            
+            justify-content: center;
+            margin-top: 5px;
+
+        }
+        .clogo{
+            justify-content: center;
+            margin-top: 5px;
+            filter: drop-shadow(5px 5px 5px #222); 
+        }
+
+        .right{
+            
+            border: none;
+            height: 150px;
+            width: 190px;
+            border-radius: 5px;
+            padding: 5px 0px 15px 0px;
+            box-shadow: -5px -5px 9px #ffffff73, 5px 5px 7px #5e687949;
+
+            
+
+        }
+
+        .line{
+            display: flex;
+            justify-content: space-around;
+        }
+        h3{
+            box-shadow: -5px -5px 9px #ffffff73, 5px 5px 7px #5e687949;
+
+            color: white;
+            background-color: rgb(14, 245, 14);
+            padding: 10px;
+            margin-top: -7px;
+            border-radius: 8px;
+        }
+
+        .inpsec{
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn1,.btn2,.btn3{
+            box-shadow: -5px -5px 9px #ffffff73, 5px 5px 7px #5e687949;
+            margin-right: 10px;
+            background-color: white;
+            border: none;
+
+
+        }
+    </style>
+</head>
+<body style="background-color: #dde1e7;">
+
+    <div class="card">
+        <h1 class="title">Rock Paper Scissor</h1>
+        <div class="line">
+            
+        <div class="left">
+            <h3>Computer</h3>
+            <img src="robot .png" alt="" class="clogo" id="clogo" style="height: 90px; width: 90px; margin-top: auto; ">
+        </div>
+
+    
+
+            
+        <div class="right">
+            <h3>You</h3>
+
+            <img src="user.png" alt="hrock" class="hlogo" id="hlogo" style="height: 90px; width: 90px; margin-top: auto;" >
+
+        </div>
+        </div>
+
+        <div class="inpsec">
+            <div class="rock">
+               <button class="btn1" onclick="rock()" >
+                <img src="hrock.png" alt="" class="inphrock" style="height: 40px; width: 40px; ">
+
+               </button>
+            </div>
+            <div class="paper">
+                <button class="btn2" onclick="paper()">
+                    <img src="hpaper.png" alt="" class="inphpaper" style="height: 40px; width: 40px;">
+                </button>
+            </div>
+            <div class="scissor">
+                <button class="btn3" onclick="scissor()">
+                    
+                <img src="hscissor.png" alt="" class="inphscissor" style="height: 40px; width: 40px;">
+
+
+                </button>
+            </div>
+        </div>
+
+        <center><h4></h4></center>
+
+    </div>
+    
+</body>
+
+<script>
+
+    var result = document.querySelector("h4");
+
+var hlogo = document.getElementById("hlogo");
+var clogo = document.getElementById("clogo");
+
+var num=0;
+
+function rock(){
+    num=num+1;
+    resultGen();
+    hlogo.src = "hrock.png";
+    
+}
+
+function paper(){
+    num=num+2;
+    
+    resultGen();
+    hlogo.src = "hpaper.png";
+
+
+}
+
+function scissor(){
+    num=num+3;
+    resultGen();
+    
+    hlogo.src = "hscissor.png";
+}
+
+function resultGen(){
+    var numbers = [1, 2, 3];
+
+    var randomIndex = Math.floor(Math.random() * numbers.length);
+    
+    var randomNum = numbers[randomIndex];
+
+    if(randomNum==1){
+        clogo.src = "crock.png";
+    }else if(randomNum==2){
+        clogo.src = "cpaper.png";
+    }else{
+        clogo.src = "cscissor.png";
+    }
+
+    
+
+    if(num==randomNum){
+        
+        result.innerHTML = " 😔Game Draw !"
+        
+    }else if(num==3 && randomNum==1){
+        result.innerHTML = " 🎉🎉 Computer Win 🎉🎉!"
+    }else if(num==1 && randomNum==3){
+        result.innerHTML = " 🎉🎉 Congratulations You Win 🎉🎉!"
+        
+
+    }else if(num==2 && randomNum==3){
+        result.innerHTML = " 🎉🎉 Computer Win 🎉🎉!"
+
+    }else if(num==3 && randomNum==2){
+        result.innerHTML = " 🎉🎉 Congratulations You Win 🎉🎉!"
+
+    }else if(num==1 && randomNum==2){
+        result.innerHTML = " 🎉🎉 Computer Win 🎉🎉!"
+
+    }else if(num==2 && randomNum==1){
+        result.innerHTML = " 🎉🎉 Congratulations You Win 🎉🎉!"
+
+    }
+}
+
+
+
+
+function randomGenerator()
+{
+    //1=rock
+    //2=paper
+    //3=scissor
+  
+return randomNumber;
+}
+
+   
+
+</script>
+</html>
